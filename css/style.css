@@ -1,0 +1,494 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.main {
+  font-family: "Segoe UI", "Helvetica", sans-serif;
+  /* Microsoft Fonts Regular */
+}
+
+/* Navbar normal */
+
+header {
+  align-items: center;
+  font-family: "Segoe UI Semibold", "Segoe UI", "Helvetica Bold", sans-serif;
+  /* Microsoft Fonts Bold, fallback to Regular, fallback to sans-serif. Helvetica para Apple*/
+  position: fixed;
+  /* Fija el contenido arriba del todo para uqe no se mueva*/
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 10;
+  /* Siempre arriba del todo*/
+  /* Blur START (Con Copilot)*/
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Blur END (Con Copilot*/
+}
+
+.logo {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo a {
+  font-family: "Segoe UI", "Helvetica", "Yu Gothic", sans-serif;
+  /* Microsoft Fonts, fallback to Yu Gothic (Japanese Microsoft's fallback), fallback to sans-serif */
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav a {
+  flex-wrap: nowrap;
+  margin: 0 13px;
+  /* Separamos los textos, primero es top and bottom y segundo left and right */
+  color: white;
+  text-decoration: none;
+  /* quitamos para que no ponga el texto como enlace */
+}
+
+/* PAGINA PRINCIPAL */
+
+section {
+  height: 100vh;
+  padding: 0px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* Esto arregla que siempre sea*/
+}
+
+.background-video {
+  /* Video de fondo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.intro h1,
+.intro p {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  /* Para que se vea sobre el video */
+  padding: 5px 5px 0px 0px; 
+}
+
+.intro p {
+  /* Blur de fondo (Con Copilot*/
+  background-color: rgba(0, 0, 0, 0.542);
+  backdrop-filter: blur(4px) saturate(120%);
+  -webkit-backdrop-filter: blur(4px) saturate(120%);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Blur de fondo (Con Copilot)*/
+}
+
+.intro {
+  display: flex;
+}
+
+sub {
+  font-family: "Segoe UI Semibold", "Helvetica Bold", sans-serif;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  /* Mejoramos accesibilidad */
+  font-size: 30px;
+  color: #ffffffd0;
+}
+
+/* SECCIONES */
+
+.tradiciones,
+.comida {
+  position: relative;
+  /* por Stickers y otros elementos asi queda fijado */
+  min-height: 100vh;
+  padding: 80px 20px;
+  height: auto;
+}
+
+h2 {
+  z-index: 0;
+  font-size: 50px;
+  text-align: center;
+  display: inline-block;
+  width: auto;
+}
+
+/* Subtitulos con paleta de color Rojo (Proporcionado por Adobe) */
+h3 {
+  font-family: "Segoe UI Semibold", "Yu Gothic Semibold", "Helvetica Bold",
+    sans-serif;
+  color: #f01111;
+  font-size: 29px;
+  margin-top: 0;
+}
+
+.Zune-MetroUI-Text {
+  /* 
+  No aplicable a WCAG
+  motivo: texto decorativo
+  https://developer.mozilla.org/es/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast
+   */
+  font-family: "Segoe UI Semibold", "Helvetica Bold", "Yu Gothic Semibold",
+    sans-serif;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 80px;
+  opacity: 0.1;
+  writing-mode: vertical-rl;
+  /* Estilo Japones */
+  z-index: 0;
+  /* si es -1 no funciona*/
+}
+
+/* Sticker CSS (Con Copilot) */
+
+.sticker {
+  position: absolute;
+  width: 180px;
+  z-index: 0; /* con este tampoco*/
+}
+
+.sticker-tradiciones-izq {
+  bottom: 20px;
+  left: 30px;
+  transform: rotate(-10deg);
+}
+
+.sticker-comida-der {
+  top: 100px;
+  right: 240px;
+  transform: rotate(10deg);
+}
+
+.sticker-tradiciones-der {
+  top: 100px;
+  right: 260px;
+  transform: rotate(8deg);
+}
+
+.sticker-comida-izq {
+  bottom: 120px;
+  left: 80px;
+  transform: rotate(-6deg);
+}
+
+/* SECCIÓN 1: TRADICIONES */
+
+.tradiciones {
+  background-color: #dfdfdf;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin-bottom: 80px;
+  gap: 50px;
+  z-index: 2;
+  /* Miku y Sticker de Microsoft Designer se ponen arriba, con esto se soluciona*/
+}
+
+.invertir-fila {
+  flex-direction: row-reverse;
+}
+
+.columna {
+  width: 50%; /* Lo partimos a la mitad */
+}
+
+.columna img {
+  width: 100%;
+  border: 4px solid black; /* EFECTO JAPÓN FLATWORLD*/
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* SECCIÓN 2: COMIDA */
+
+.comida {
+  background-color: #111111;
+  color: white;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  /* añadimos una gotina de espacio*/
+  max-width: 1200px;
+  z-index: 2;
+  /* Arriba del Sticker*/
+}
+
+.tarjeta {
+  background-color: #222222;
+  border: 1px solid #444444;
+  width: 320px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.contenido-tarjeta {
+  padding: 20px;
+}
+
+.contenido-tarjeta h3 {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+
+footer {
+  font-family: "Segoe UI Semibold", "Segoe UI", "Helvetica", sans-serif;
+  background-color: #b71c1c; /* Comprobado mediante Adobe */
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Se intento hacer modular de manera que lo general arriba y lo unico de cada item aqui abajo (en vez de escritorio arriba y iPad/iPhone abajo) */
+/* Escritorio cuadnos sea tamaño completo, se usa minimo par asegurar */
+@media screen and (max-height: 564px) {
+  .intro h1 {
+    padding: 0px 15px 15px 15px;
+    /* Blur de fondo (Con Copilot*/
+    background-color: rgba(0, 0, 0, 0.542);
+    backdrop-filter: blur(4px) saturate(120%);
+    -webkit-backdrop-filter: blur(4px) saturate(120%);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Blur de fondo (Con Copilot)*/
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-height: 565px) {
+  /* Windows Desktop */
+  .intro {
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .intro h1 {
+    font-family: "Segoe UI Light", "Helvetica Light", "Yu Gothic Light",
+      sans-serif;
+    font-size: 140px;
+    width: 50%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .intro p {
+    padding: 15px 20px;
+    font-size: 30px;
+    max-width: 50%;
+    margin: 0;
+  }
+
+  .Zune-MetroUI-Text {
+    font-size: 100px;
+  }
+}
+
+/* iPad, si no lo es se descarta */
+@media screen and (min-width: 577px) and (max-width: 1199px) and (min-height: 565px) {
+  nav {
+    padding: 19px 0px;
+    /* cuando hace break no se ve bien abajo */
+  }
+
+  .intro {
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .intro h1 {
+    font-family: "Segoe UI Light", "Helvetica Light", "Yu Gothic Light",
+      sans-serif;
+    font-size: 80px;
+    width: auto;
+    margin: 0px;
+    text-align: left;
+  }
+
+  .intro p {
+    padding-left: 20px;
+    font-size: 21.5px;
+  }
+
+  /* SECCIÓN PRINCIPAL */
+
+  .fila {
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  /* Sticker mas pequeños para que se vean aunque sea una gotina */
+  .sticker {
+    width: 100px;
+  }
+
+  .sticker-tradiciones-izq {
+    bottom: 20px;
+    left: 30px;
+    transform: rotate(-10deg);
+  }
+
+  /* Ajustes para stickers adicionales en tablet */
+  .sticker-tradiciones-der {
+    width: 100px;
+    top: 100px;
+    right: 20px;
+    transform: rotate(6deg);
+  }
+
+  .sticker-comida-izq {
+    width: 100px;
+    bottom: 40px;
+    left: 40px;
+    transform: rotate(-6deg);
+  }
+
+  .sticker-comida-der {
+    top: 50px;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  /* Al hacerlo pequeño cuando hace break queda feo asi que con esto se soluciona */
+  header {
+    justify-content: center;
+  }
+
+  footer {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 576px) {
+  /* iPhone */
+  nav {
+    padding: 19px 0px;
+  }
+  .columna {
+    width: 100%; /* Ya no necesitamos partirlo a la mitad asi que usamos el 100% */
+  }
+
+  .intro {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 0px;
+    /* lo convertimos en una tarjeta */
+  }
+
+  .intro h1 {
+    display: none;
+    /* Arriba ya sale el titulo lo suficientemente grande con lo que nos lo ahorramos,
+    ademas abajo en ese texto ya indica que es año nuevo */
+  }
+
+  .intro p {
+    width: 100%;
+    border-radius: 0px;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  /* SECCIÓN PRINCIPAL */
+  h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  /* Tradiciones: Colapsar a una columna */
+  .fila {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tarjeta {
+    width: 100%;
+  }
+
+  /* Stickers reducir */
+  .sticker {
+    width: 120px;
+  }
+
+  .sticker-tradiciones-izq {
+    bottom: 20px;
+    left: 30px;
+    transform: rotate(-10deg);
+  }
+
+  .sticker-comida-der {
+    top: 50px;
+    right: 10px;
+  }
+  .sticker-tradiciones-der {
+    width: 120px;
+    top: 30px;
+    right: 10px;
+  }
+
+  .sticker-comida-izq {
+    /* Se sale al footer, es normal */
+    width: 120px;
+    bottom: -30px;
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 576px) and (max-height: 400px) {
+  /*  Apple Watch */
+  .logo {
+    display: none;
+  }
+  .intro h1 {
+    display: inline;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sticker-comida-der,
+  .sticker-tradiciones-der {
+    display: none;
+  }
+}
